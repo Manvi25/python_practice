@@ -1,7 +1,14 @@
 import logging
 
 # Configure the logging settings
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('example.log'),  # Log to a file
+        logging.StreamHandler()  # Log to the console
+    ]
+)
 
 # Example usage
 def divide_numbers(x, y):
